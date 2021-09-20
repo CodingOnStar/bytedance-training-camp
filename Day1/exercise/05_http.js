@@ -7,7 +7,7 @@ http
     const { url, method, headers } = request;
     if (url === "/" && method === "GET") {
       fs.readFile(
-        "/Users/hanxujiang/Documents/bytedance-training-camp/Day1/授课内容/index.html",
+        "/Users/hanxujiang/Documents/bytedance-training-camp/Day1/exercise/index.html",
         (err, data) => {
           if (err) {
             response.writeHead(500, {
@@ -28,7 +28,11 @@ http
       //所有的图片
       // 直接用readFile读取：会占用内用过大，readFile会把全部图片内容加载到服务器
       // stream 流
-      fs.createReadStream();
+      console.log(url);
+      fs.createReadStream(
+        "/Users/hanxujiang/Documents/bytedance-training-camp/Day1/exercise" +
+          url
+      ).pipe(response);
     } else {
       response.statusCode = 400;
       response.setHeader("Content-Type", "text/plain;charset=utf-8");
