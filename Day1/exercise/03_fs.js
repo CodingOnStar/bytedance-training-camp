@@ -15,7 +15,7 @@ async () => {
   const fs = fs.require("fs");
   const { promisify } = require("util");
   const readFile = promisify(fs.readFile);
-  const data = await fs.readFile("./conf.js");
+  const data = await readFile("./conf.js");
   console.log(data.toString);
 };
 
