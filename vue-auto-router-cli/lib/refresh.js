@@ -6,17 +6,27 @@ const chalk = require("chalk");
 module.exports = async () => {
   //获取列表
   const list = fs
-    .readdirSync("./src/views")
+    .readdirSync(
+      "/Users/hanxujiang/Documents/bytedance-training-camp/abc/src/views"
+    )
     .filter((v) => v !== "Home.vue")
     .map((v) => ({
       name: v.replace(".vue", "").toLowerCase(),
       file: v,
     }));
   // 生成路由定义
-  compile({ list }, "./src/router.js", "./template/router.js.hbs");
+  compile(
+    { list },
+    "/Users/hanxujiang/Documents/bytedance-training-camp/abc/src/router.js",
+    "/Users/hanxujiang/Documents/bytedance-training-camp/abc/template/router.js.hbs"
+  );
 
   // 生成菜单
-  compile({ list }, "./src/App.vue", "./template/App.vue.hbs");
+  compile(
+    { list },
+    "/Users/hanxujiang/Documents/bytedance-training-camp/abc/src/App.vue",
+    "/Users/hanxujiang/Documents/bytedance-training-camp/abc/template/App.vue.hbs"
+  );
   /**
    *
    * @param {*} meta 数据定义
@@ -30,7 +40,6 @@ module.exports = async () => {
       const content = fs.readFileSync(templatePath).toString();
       // 通过handlebars进行编译
       const result = handlebars.compile(content)(meta);
-      //const result = handlebars.compile();
       // 利用fs.writeFileSync将结果写入filePath
       fs.writeFileSync(filePath, result);
       console.log(chalk.green(`🔥${filePath}创建成功`));

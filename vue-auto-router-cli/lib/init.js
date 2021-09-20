@@ -7,8 +7,12 @@ const log = (content) => console.log(chalk.green(content));
 const { clone } = require("./download");
 const open = require("open");
 const spawn = async (...args) => {
+  // determine wether you are using win32 or not
+  if (process.platform === "win32") {
+    const opt = args[args.length - 1];
+    opt.shell = true;
+  }
   //同步 Promiseapi
-
   const { spawn } = require("child_process");
   return new Promise((resolve) => {
     const proc = spawn(...args);
@@ -28,13 +32,24 @@ module.exports = async (name) => {
   log(data);
   //项目;
   log("🚀创建项目" + name);
-  await clone("https://github.com/su37josephxia/vue-template", name);
+  // await clone("github:su37josephxia/vue-template", name);
 
   // 下载依赖 npm i
   // 子进程
-  log("🚴🏻安装依赖...");
+  log("🚛 Installing dependencies...");
+  // 不是同步方法
   await spawn("npm", ["install"], { cwd: `./${name}` });
-  log(chalk.green("👌安装完成"));
-  open("localhost:8080");
+  log(
+    chalk.green(`
+    ------------------
+    🎉 Done
+    ------------------
+    ✨ Usage
+        cd ${name}
+        npm run serve
+    ------------------
+    `)
+  );
+  open("http://localhost:8080");
   await spawn("npm", ["run", "serve"], { cwd: `./${name}` });
 };
