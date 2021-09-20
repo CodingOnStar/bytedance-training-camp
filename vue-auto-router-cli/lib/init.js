@@ -28,7 +28,7 @@ module.exports = async (name) => {
   log(data);
   //项目;
   log("🚀创建项目" + name);
-  //await clone("https://github.com/su37josephxia/vue-template", name);
+  await clone("https://github.com/su37josephxia/vue-template", name);
 
   // 下载依赖 npm i
   // 子进程

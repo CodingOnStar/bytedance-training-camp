@@ -26,5 +26,6 @@ const loadModel = (config) => (app) => {
   app.$model = {};
   load("../model", (filename, { schema }) => {
     console.log("load model:" + filename, schema);
+    app.$model[filename];
   });
 };
