@@ -6,33 +6,24 @@ const chalk = require("chalk");
 module.exports = async () => {
   //获取列表
   const list = fs
-    .readdirSync(
-      "/Users/hanxujiang/Documents/bytedance-training-camp/vue-auto-router-cli/abc/src/views"
-    )
+    .readdirSync("./src/views")
     .filter((v) => v !== "Home.vue")
     .map((v) => ({
       name: v.replace(".vue", "").toLowerCase(),
       file: v,
     }));
   // 生成路由定义
-  complie(
-    { list },
-    "/Users/hanxujiang/Documents/bytedance-training-camp/vue-auto-router-cli/abc/src/views/router.js",
-    "/Users/hanxujiang/Documents/bytedance-training-camp/vue-auto-router-cli/abc/src/template/router.js.hbs"
-  );
-  //生成菜单
-  complie(
-    { list },
-    "/Users/hanxujiang/Documents/bytedance-training-camp/vue-auto-router-cli/abc/src/views/App.vue",
-    "/Users/hanxujiang/Documents/bytedance-training-camp/vue-auto-router-cli/abc/src/template/App.vue.hbs"
-  );
+  compile({ list }, "./src/router.js", "./template/router.js.hbs");
+
+  // 生成菜单
+  compile({ list }, "./src/App.vue", "./template/App.vue.hbs");
   /**
    *
    * @param {*} meta 数据定义
    * @param {*} filePath 目标文件
    * @param {*} templatePath 模板
    */
-  function complie(meta, filePath, templatePath) {
+  function compile(meta, filePath, templatePath) {
     // 先判断模板路径是否存在
     if (fs.existsSync(templatePath)) {
       // 读取模板路径下的文件，然后toString将二进制流转换为可读文本
