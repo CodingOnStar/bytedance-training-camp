@@ -5,13 +5,14 @@ const clear = require("clear");
 const chalk = require("chalk");
 const log = (content) => console.log(chalk.green(content));
 const { clone } = require("./download");
-
+const open = require("open");
 const spawn = async (...args) => {
   //同步 Promiseapi
-  // 输出流 子进程合并到主进程
+
   const { spawn } = require("child_process");
   return new Promise((resolve) => {
     const proc = spawn(...args);
+    // 输出流 子进程合并到主进程
     proc.stdout.pipe(process.stdout);
     proc.stderr.pipe(process.stderr);
     proc.on("close", () => {
