@@ -1,7 +1,6 @@
 {
-  "name": "vue-auto-router-cli",
+  "name": "my-acli",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "bin": {
     "kkb": "./bin/kkb.js"
@@ -21,5 +20,10 @@
     "handlebars": "^4.7.7",
     "open": "^8.2.1",
     "ora": "^6.0.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "description": ""
 }
