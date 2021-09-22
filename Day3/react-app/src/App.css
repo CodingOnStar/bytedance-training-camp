@@ -1,0 +1,44 @@
+#logo img {
+  width: 32px;
+  margin-right: 12px;
+}
+#logo {
+  height: 64px;
+  padding-left: 40px;
+  overflow: hidden;
+  color: #000000d9;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: PuHuiTi, -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    helvetica neue, Arial, noto sans, sans-serif, apple color emoji,
+    segoe ui emoji, segoe ui symbol, noto color emoji, sans-serif;
+  line-height: 64px;
+  letter-spacing: -0.18px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+input {
+  max-width: none;
+  padding-right: 20px;
+  padding-left: 11px;
+  cursor: pointer;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 14px;
+  box-shadow: none;
+  vertical-align: middle;
+}
+#menu {
+  height: 64px;
+}
+#searchbox {
+  height: 64px;
+  line-height: 64px;
+  vertical-align: middle;
+}
+#menu li {
+  line-height: 64px;
+}
+ul #menu {
+  border-bottom: 0;
+}
