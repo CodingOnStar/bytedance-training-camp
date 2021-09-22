@@ -1,6 +1,6 @@
 import "./App.css";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import { Input, Menu, Row, Col } from "antd";
+import { Input, Menu, Row, Col, Icon } from "antd";
 import { UnorderedListOutlined } from "@ant-design/icons";
 
 function App() {
@@ -33,6 +33,14 @@ function App() {
             </Menu.SubMenu>
           </Menu>
         </Col>
+      </Row>
+      <Row justify="center">
+        <div id="biglogo">
+          <img
+            alt="logo"
+            src="https://gw.alipayobjects.com/zos/antfincdn/6UYtAUYPXE/AntDesign.svg"
+          ></img>
+        </div>
       </Row>
     </div>
   );

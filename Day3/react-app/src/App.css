@@ -18,14 +18,6 @@
   text-decoration: none;
 }
 input {
-  max-width: none;
-  padding-right: 20px;
-  padding-left: 11px;
-  cursor: pointer;
-  width: 100%;
-  padding-left: 20px;
-  font-size: 14px;
-  box-shadow: none;
   vertical-align: middle;
 }
 #menu {
@@ -39,6 +31,17 @@ input {
 #menu li {
   line-height: 64px;
 }
-ul #menu {
+ul#menu {
   border-bottom: 0;
+}
+#biglogo {
+  margin-top: 191px;
+}
+#biglogo img {
+  width: 500px;
+}
+#dot {
+  position: absolute;
+  top: -38px;
+  left: 339px;
 }
