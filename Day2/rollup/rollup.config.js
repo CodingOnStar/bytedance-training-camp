@@ -3,7 +3,7 @@ import {terser} from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 
-
+//ss 
 export default{
     input:"src/main.js",
     output:[{
